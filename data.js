@@ -360,8 +360,8 @@ const CAF_DEFAULT_DATA = {
   },
   "contact": {
     "intro": "Premier échange sans engagement pour cadrer vos besoins et vous orienter vers le bon interlocuteur du cabinet.",
-    "address": "Rue 15 x Bd du Centenaire, Dakar, Sénégal",
-    "phone": "+221 33 800 00 00",
+    "address": "16-162 Rue A, Dakar",
+    "phone": "+221 33 860 08 35 — +221 76 158 14 92 / 78 476 85 20",
     "whatsappNumber": "221770000000",
     "whatsappMessage": "Bonjour Crystal Audit Finance, je souhaite un premier échange.",
     "email": "contact@crystalauditfinance.sn",
