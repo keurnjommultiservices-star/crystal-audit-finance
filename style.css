@@ -197,30 +197,33 @@ section.alt{background:#fff; border-top:2px solid var(--line); border-bottom:2px
 .service-row h3{font-family:var(--serif); font-size:22px; font-weight:700; color:var(--charcoal);}
 .service-row p{font-size:15px; font-weight:500; color:var(--ink-soft); max-width:52ch;}
 
-/* ===== Audit — sous-pôles ===== */
+/* ===== Audit — onglets Expertise comptable / Commissariat aux comptes ===== */
 .audit-heading{
   font-family:var(--serif); font-weight:700; font-size:clamp(28px,3vw,36px);
-  color:var(--charcoal); max-width:22ch; margin-bottom:38px;
+  color:var(--charcoal); max-width:22ch; margin-bottom:18px;
 }
-.audit-subservices{
-  display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:56px;
+.audit-intro{font-size:16.5px; font-weight:500; color:var(--ink-soft); max-width:70ch; margin-bottom:36px;}
+.audit-tabs-nav{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+.audit-tab-btn{
+  padding:13px 24px; border:2px solid var(--line); background:#fff;
+  font-weight:700; font-size:14.5px; color:var(--ink-soft); cursor:pointer; border-radius:3px 3px 0 0;
 }
-.subservice-card{
-  background:#fff; border:2px solid var(--line); border-top:4px solid var(--green);
-  padding:32px 30px; transition:transform .18s ease, border-color .18s ease;
+.audit-tab-btn:hover{color:var(--charcoal);}
+.audit-tab-btn.active{border-color:var(--green); border-bottom-color:#fff; color:var(--green-deep); background:var(--green-light);}
+.audit-tab-panels{border-top:3px solid var(--green); padding-top:36px; margin-bottom:56px;}
+.audit-tab-panel{display:none;}
+.audit-tab-panel.active{display:block;}
+.audit-tagline{
+  font-family:var(--serif); font-style:italic; font-weight:600; color:var(--green-deep);
+  font-size:17px; margin-bottom:30px; max-width:62ch;
 }
-.subservice-card:hover{transform:translateY(-4px); border-top-color:var(--green-deep);}
-.subservice-icon{
-  width:46px; height:46px; border:2px solid var(--green); color:var(--green-deep);
-  display:flex; align-items:center; justify-content:center; margin-bottom:20px;
-}
-.subservice-icon svg{width:22px; height:22px;}
-.subservice-card h3{font-family:var(--serif); font-weight:700; font-size:20px; color:var(--charcoal); margin-bottom:10px;}
-.subservice-card p.sub-desc{font-size:14.5px; font-weight:500; color:var(--ink-soft); margin-bottom:16px;}
-.subservice-card ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
-.subservice-card ul li{font-size:13.5px; font-weight:700; color:var(--charcoal); display:flex; gap:8px; align-items:flex-start;}
-.subservice-card ul li svg{width:14px; height:14px; color:var(--green); flex:none; margin-top:3px;}
-@media (max-width:760px){ .audit-subservices{grid-template-columns:1fr;} }
+.audit-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+.audit-group{border:2px solid var(--line); border-left:4px solid var(--green); background:#fff; padding:26px 28px;}
+.audit-group h4{font-family:var(--serif); font-weight:700; font-size:17.5px; color:var(--charcoal); margin-bottom:15px;}
+.audit-group ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+.audit-group ul li{font-size:14.5px; font-weight:600; color:var(--ink-soft); display:flex; gap:8px; align-items:flex-start;}
+.audit-group ul li svg{width:14px; height:14px; color:var(--green); flex:none; margin-top:3px;}
+@media (max-width:760px){ .audit-groups{grid-template-columns:1fr;} }
 
 /* ===== Detail sections ===== */
 .detail{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}

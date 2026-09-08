@@ -357,19 +357,30 @@ function saveServicesPanel() {
   saveAll();
 }
 
-/* --- Audit (titre, 2 sous-pôles, paragraphes, encadré) --- */
+/* --- Audit (titre, intro, 2 onglets détaillés, encadré) --- */
 function renderAuditPanel() {
   const d = DATA.audit;
+  const exp = d.tabs.expertise, com = d.tabs.commissariat;
   return `
     <h2>Audit</h2>
-    <p class="desc">Titre de la section, les deux sous-pôles mis en avant (Expertise comptable / Commissariat aux comptes), le texte et l'encadré chiffres.</p>
+    <p class="desc">Titre, texte d'introduction, puis le détail des deux onglets « Expertise comptable » et « Commissariat aux comptes » tels qu'affichés sur le site.</p>
     ${field('Titre de la section', 'audit_title', d.title)}
-    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:20px 0 6px;">Sous-pôles mis en avant</label>
-    <div class="list-editor" id="audit_subservices">${(d.subservices || []).map(s => subserviceRowHtml(s)).join('')}</div>
-    <button type="button" class="add-btn" onclick="addSubserviceRow()">+ Ajouter un sous-pôle</button>
-    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:24px 0 6px;">Paragraphes</label>
+    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:14px 0 6px;">Paragraphe d'introduction</label>
     ${strListHtml('audit_paras', d.paragraphs)}
-    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:20px 0 6px;">Autres missions (liste à puces)</label>
+
+    <h3 style="font-family:var(--serif); font-size:18px; margin:32px 0 4px; color:var(--charcoal);">Onglet — Expertise comptable</h3>
+    ${field('Accroche (phrase en italique)', 'audit_exp_tagline', exp.tagline)}
+    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:14px 0 6px;">Groupes (ex : Établit, Pilote, Élabore, Participe)</label>
+    <div class="list-editor" id="audit_exp_groups">${exp.groups.map(g => groupRowHtml(g)).join('')}</div>
+    <button type="button" class="add-btn" onclick="addGroupRow('audit_exp_groups')">+ Ajouter un groupe</button>
+
+    <h3 style="font-family:var(--serif); font-size:18px; margin:32px 0 4px; color:var(--charcoal);">Onglet — Commissariat aux comptes</h3>
+    ${field('Accroche (phrase en italique)', 'audit_com_tagline', com.tagline)}
+    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:14px 0 6px;">Groupes (ex : Nous procédons, Par ailleurs...)</label>
+    <div class="list-editor" id="audit_com_groups">${com.groups.map(g => groupRowHtml(g)).join('')}</div>
+    <button type="button" class="add-btn" onclick="addGroupRow('audit_com_groups')">+ Ajouter un groupe</button>
+
+    <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:32px 0 6px;">Autres missions (liste à puces, sous les onglets)</label>
     ${strListHtml('audit_checklist', d.checklist)}
     ${field('Titre de l\'encadré', 'audit_statTitle', d.statTitle)}
     <label style="display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin:14px 0 6px;">Lignes de l'encadré</label>
@@ -377,45 +388,35 @@ function renderAuditPanel() {
     <button class="save-btn" onclick="saveAuditPanel()">Enregistrer</button>
   `;
 }
-function subserviceRowHtml(s) {
-  s = s || {};
-  const icon = s.icon || 'calculator';
+function groupRowHtml(g) {
+  g = g || {};
   return `<div class="list-item">
     <button type="button" class="remove-btn" onclick="this.closest('.list-item').remove()">Supprimer</button>
-    <div class="f-row">
-      <div class="f-group"><label>Titre</label><input type="text" class="row-title" value="${escapeAttr(s.title)}"></div>
-      <div class="f-group"><label>Icône</label>
-        <select class="row-icon">
-          <option value="calculator" ${icon === 'calculator' ? 'selected' : ''}>Calculatrice</option>
-          <option value="shield" ${icon === 'shield' ? 'selected' : ''}>Bouclier</option>
-          <option value="star" ${icon === 'star' ? 'selected' : ''}>Étoile</option>
-        </select>
-      </div>
-    </div>
-    <div class="f-group"><label>Description courte</label><textarea class="row-desc">${escapeHtml(s.desc)}</textarea></div>
-    <div class="f-group"><label>Points clés (un par ligne)</label><textarea class="row-points">${escapeHtml((s.points || []).join('\n'))}</textarea></div>
+    <div class="f-group"><label>Titre du groupe</label><input type="text" class="row-title" value="${escapeAttr(g.title)}"></div>
+    <div class="f-group"><label>Puces (une par ligne)</label><textarea class="row-items">${escapeHtml((g.items || []).join('\n'))}</textarea></div>
   </div>`;
 }
-function addSubserviceRow() {
-  document.getElementById('audit_subservices').insertAdjacentHTML('beforeend', subserviceRowHtml({}));
+function addGroupRow(containerId) {
+  document.getElementById(containerId).insertAdjacentHTML('beforeend', groupRowHtml({}));
 }
-function readSubserviceList() {
-  const items = [];
-  document.getElementById('audit_subservices').querySelectorAll('.list-item').forEach(it => {
-    items.push({
+function readGroupList(containerId) {
+  const groups = [];
+  document.getElementById(containerId).querySelectorAll('.list-item').forEach(it => {
+    groups.push({
       title: it.querySelector('.row-title').value,
-      icon: it.querySelector('.row-icon').value,
-      desc: it.querySelector('.row-desc').value,
-      points: it.querySelector('.row-points').value.split('\n').map(s => s.trim()).filter(Boolean)
+      items: it.querySelector('.row-items').value.split('\n').map(s => s.trim()).filter(Boolean)
     });
   });
-  return items;
+  return groups;
 }
 function saveAuditPanel() {
   const d = DATA.audit;
   d.title = val('audit_title');
-  d.subservices = readSubserviceList();
   d.paragraphs = readStrList('audit_paras');
+  d.tabs.expertise.tagline = val('audit_exp_tagline');
+  d.tabs.expertise.groups = readGroupList('audit_exp_groups');
+  d.tabs.commissariat.tagline = val('audit_com_tagline');
+  d.tabs.commissariat.groups = readGroupList('audit_com_groups');
   d.checklist = readStrList('audit_checklist');
   d.statTitle = val('audit_statTitle');
   d.stats = readKVList('audit_stats');

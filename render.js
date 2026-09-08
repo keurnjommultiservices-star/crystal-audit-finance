@@ -116,18 +116,33 @@ const CAF_ICONS = {
   shield: '<path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><polyline points="9 12 11 14 15 10"/>',
   star: '<polygon points="12 2 15 9 22 9.5 16.5 14 18 21.5 12 17.5 6 21.5 7.5 14 2 9.5 9 9"/>'
 };
-function renderSubservices(container, items) {
-  container.innerHTML = '';
-  items.forEach(it => {
-    const iconPath = CAF_ICONS[it.icon] || CAF_ICONS.star;
-    const card = el('div', 'subservice-card');
-    card.innerHTML = `
-      <div class="subservice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${iconPath}</svg></div>
-      <h3>${it.title}</h3>
-      <p class="sub-desc">${it.desc}</p>
-      <ul>${(it.points || []).map(p => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${p}</li>`).join('')}</ul>
-    `;
-    container.appendChild(card);
+
+function renderAuditGroups(groups) {
+  return groups.map(g => `
+    <div class="audit-group">
+      <h4>${g.title}</h4>
+      <ul>${(g.items || []).map(it => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${it}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+}
+
+function renderAuditTabs(navEl, panelsEl, tabs) {
+  const keys = Object.keys(tabs);
+  navEl.innerHTML = keys.map((k, i) => `<button type="button" class="audit-tab-btn${i === 0 ? ' active' : ''}" data-tab="${k}">${tabs[k].label}</button>`).join('');
+  panelsEl.innerHTML = keys.map((k, i) => `
+    <div class="audit-tab-panel${i === 0 ? ' active' : ''}" data-panel="${k}">
+      <p class="audit-tagline">${tabs[k].tagline}</p>
+      <div class="audit-groups">${renderAuditGroups(tabs[k].groups || [])}</div>
+    </div>
+  `).join('');
+
+  navEl.querySelectorAll('.audit-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navEl.querySelectorAll('.audit-tab-btn').forEach(b => b.classList.remove('active'));
+      panelsEl.querySelectorAll('.audit-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      panelsEl.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+    });
   });
 }
 
@@ -193,8 +208,8 @@ function renderSite() {
 
   // Audit
   document.getElementById('auditTitle').textContent = d.audit.title;
-  renderSubservices(document.getElementById('auditSubservices'), d.audit.subservices || []);
-  renderParagraphs(document.getElementById('auditParagraphs'), d.audit.paragraphs);
+  document.getElementById('auditIntro').innerHTML = (d.audit.paragraphs || []).map(p => `<p>${p}</p>`).join('');
+  renderAuditTabs(document.getElementById('auditTabsNav'), document.getElementById('auditTabPanels'), d.audit.tabs);
   renderChecklist(document.getElementById('auditChecklist'), d.audit.checklist);
   document.getElementById('auditStatTitle').textContent = d.audit.statTitle;
   renderStatRows(document.getElementById('auditStats'), d.audit.stats);
