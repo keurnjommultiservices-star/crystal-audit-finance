@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystal Audit Finance — Cabinet d'audit, d'expertise comptable et de conseil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;0,6..72,800;1,6..72,500&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <a class="brand" href="#accueil">
+      <svg class="brand-mark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="30,4 52,17 52,43 30,56 8,43 8,17" fill="none" stroke="#262B27" stroke-width="4"/>
+        <polygon points="30,17 42,24 42,36 30,43 18,36 18,24" fill="none" stroke="#1E7B4D" stroke-width="4"/>
+      </svg>
+      <span class="brand-name" id="brandName">Crystal Audit <span id="brandAccent">Finance</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="primary" id="primaryNav">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">A-propos</a>
+      <a href="#services">Services</a>
+      <a href="#audit">Audit</a>
+      <a href="#conseils">Conseils</a>
+      <a href="#formation">Formation</a>
+      <a href="#finance">Finance</a>
+      <a href="#team">Team</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HERO / ACCUEIL ===== -->
+  <section class="hero" id="accueil">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-eyebrow" id="heroEyebrow"></p>
+          <h1 id="heroTitle"></h1>
+          <p class="lead" id="heroLead"></p>
+          <div class="hero-actions">
+            <a href="#contacts" class="btn btn-primary" id="heroCtaPrimary"></a>
+            <a href="#services" class="btn btn-ghost" id="heroCtaSecondary"></a>
+          </div>
+        </div>
+        <div class="ledger-card">
+          <h3 id="heroLedgerTitle"></h3>
+          <div id="heroLedgerRows"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-cover" id="heroCover" aria-hidden="true">
+      <span class="cover-caption">Île de Gorée, Dakar</span>
+    </div>
+  </section>
+
+  <!-- ===== A-PROPOS ===== -->
+  <section id="apropos">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-ref">A-propos</p>
+          <h2 id="aboutTitle"></h2>
+        </div>
+        <p id="aboutIntro"></p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <div class="about-figure">
+            <div class="big-num" id="aboutFigBigA"></div>
+            <div class="cap" id="aboutFigCapA"></div>
+          </div>
+          <div class="about-figure">
+            <div class="big-num" id="aboutFigBigB"></div>
+            <div class="cap" id="aboutFigCapB"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div id="aboutParagraphs"></div>
+          <div class="pillars" id="aboutPillars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="alt" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-ref">Services</p>
+          <h2 id="servicesTitle"></h2>
+        </div>
+        <p id="servicesIntro"></p>
+      </div>
+      <div class="services-list" id="servicesList"></div>
+    </div>
+  </section>
+
+  <!-- ===== AUDIT ===== -->
+  <section id="audit">
+    <div class="wrap">
+      <p class="section-ref">Audit</p>
+      <h2 class="audit-heading" id="auditTitle"></h2>
+      <div class="audit-subservices" id="auditSubservices"></div>
+      <div class="detail">
+        <div class="detail-copy">
+          <div id="auditParagraphs"></div>
+          <ul class="checklist" id="auditChecklist"></ul>
+        </div>
+        <div class="stat-panel">
+          <div class="stat-panel-title" id="auditStatTitle"></div>
+          <div id="auditStats"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONSEILS ===== -->
+  <section class="alt" id="conseils">
+    <div class="wrap">
+      <div class="detail">
+        <div class="stat-panel">
+          <div class="stat-panel-title" id="conseilsStatTitle"></div>
+          <div id="conseilsStats"></div>
+        </div>
+        <div class="detail-copy">
+          <p class="section-ref">Conseils</p>
+          <h2 id="conseilsTitle"></h2>
+          <div id="conseilsParagraphs"></div>
+          <ul class="checklist" id="conseilsChecklist"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMATION ===== -->
+  <section id="formation">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail-copy">
+          <p class="section-ref">Formation</p>
+          <h2 id="formationTitle"></h2>
+          <div id="formationParagraphs"></div>
+          <ul class="checklist" id="formationChecklist"></ul>
+        </div>
+        <div class="stat-panel">
+          <div class="stat-panel-title" id="formationStatTitle"></div>
+          <div id="formationStats"></div>
+        </div>
+      </div>
+      <div class="formation-gallery" id="formationGallery"></div>
+    </div>
+  </section>
+
+  <!-- ===== FINANCE ===== -->
+  <section class="alt" id="finance">
+    <div class="wrap">
+      <div class="detail">
+        <div class="detail-copy">
+          <p class="section-ref">Finance</p>
+          <h2 id="financeTitle"></h2>
+          <div id="financeParagraphs"></div>
+          <ul class="checklist" id="financeChecklist"></ul>
+        </div>
+        <div class="stat-panel">
+          <div class="stat-panel-title" id="financeStatTitle"></div>
+          <div id="financeStats"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section id="team">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-ref">Team</p>
+          <h2 id="teamTitle"></h2>
+        </div>
+        <p id="teamIntro"></p>
+      </div>
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS ===== -->
+  <section class="alt" id="contacts">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-ref">Contacts</p>
+          <h2>Parlons de votre dossier</h2>
+        </div>
+        <p id="contactIntro"></p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-list">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><h4>Adresse</h4><p id="contactAddress"></p></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div><h4>Téléphone</h4><p id="contactPhone"></p></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            <div><h4>E-mail</h4><p id="contactEmail"></p></div>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div><h4>Horaires</h4><p id="contactHours"></p></div>
+          </div>
+          <div class="whatsapp-block">
+            <h4>Écrire sur WhatsApp</h4>
+            <p>Réponse rapide pour une première prise de contact.</p>
+            <a class="btn btn-whatsapp" id="whatsappLink" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.33 4.99L2 22l5.2-1.36a9.94 9.94 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.55 2 12.04 2Zm0 18.2c-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.08.81.82-3-.2-.31a8.2 8.2 0 0 1-1.26-4.4c0-4.53 3.68-8.21 8.22-8.21 4.53 0 8.21 3.68 8.21 8.21 0 4.53-3.68 8.24-8.17 8.24Zm4.5-6.15c-.25-.12-1.47-.72-1.7-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.97-.14.17-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>
+              <span id="whatsappBtnLabel">Ouvrir WhatsApp</span>
+            </a>
+          </div>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Merci, votre demande a bien été enregistrée.');">
+          <div class="field">
+            <label for="nom">Nom complet</label>
+            <input id="nom" type="text" required>
+          </div>
+          <div class="field">
+            <label for="emailField">E-mail</label>
+            <input id="emailField" type="email" required>
+          </div>
+          <div class="field">
+            <label for="sujet">Pôle concerné</label>
+            <select id="sujet">
+              <option>Audit</option>
+              <option>Conseils</option>
+              <option>Formation</option>
+              <option>Finance</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Votre message</label>
+            <textarea id="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="brand-mark" viewBox="0 0 60 60" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="30,4 52,17 52,43 30,56 8,43 8,17" fill="none" stroke="#F6F5F1" stroke-width="4"/>
+            <polygon points="30,17 42,24 42,36 30,43 18,36 18,24" fill="none" stroke="#1E7B4D" stroke-width="4"/>
+          </svg>
+          <span class="brand-name" id="footBrandName">Crystal Audit Finance</span>
+        </div>
+        <p id="footDesc"></p>
+      </div>
+      <div>
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#apropos">A-propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Pôles</h5>
+        <ul>
+          <li><a href="#audit">Audit</a></li>
+          <li><a href="#conseils">Conseils</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#finance">Finance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span id="footCopyright"></span>
+      <span id="footOrderLine"></span>
+    </div>
+    <div class="foot-bottom" style="border-top:none; padding-top:8px;">
+      <a href="admin.html" style="color:#5C635C; font-size:12px;">Administration du site</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.33 4.99L2 22l5.2-1.36a9.94 9.94 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.55 2 12.04 2Zm0 18.2c-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.08.81.82-3-.2-.31a8.2 8.2 0 0 1-1.26-4.4c0-4.53 3.68-8.21 8.22-8.21 4.53 0 8.21 3.68 8.21 8.21 0 4.53-3.68 8.24-8.17 8.24Z"/></svg>
+</a>
+
+<script src="data.js"></script>
+<script src="render.js"></script>
+</body>
+</html>
