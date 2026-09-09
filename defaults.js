@@ -91,6 +91,28 @@ const CAF_DEFAULT_DATA = {
       }
     ]
   },
+  "quiSommesNous": {
+    "photo": "",
+    "title": "Qui sommes-nous ?",
+    "intro": "Crystal Audit Finance est un cabinet d'expertise comptable, d'audit légal et contractuel — commissaire aux comptes — et de conseil aux entreprises.",
+    "subheading": "Pourquoi passer par le cabinet Crystal Audit Finance ?",
+    "paragraph2": "Passer par le cabinet Crystal Audit Finance vous fait bénéficier du savoir et des compétences d'une équipe spécialisée en audit et financement.",
+    "paragraph3": "Notre équipe de professionnels expérimentés fournit des solutions et des conseils financiers judicieux parce que la satisfaction du client est notre priorité absolue.",
+    "stats": [
+      {
+        "value": "25+",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "99%",
+        "label": "Succès des travaux"
+      },
+      {
+        "value": "3+",
+        "label": "Membres de l'équipe d'experts"
+      }
+    ]
+  },
   "about": {
     "title": "Un cabinet ancré dans la pratique OHADA",
     "intro": "Fondé à Dakar, Crystal Audit Finance réunit experts-comptables, auditeurs et fiscalistes formés aux exigences du droit comptable OHADA — SYSCOHADA pour les entreprises, SYCEBNL pour les associations et ONG — et aux réalités des organisations sénégalaises.",

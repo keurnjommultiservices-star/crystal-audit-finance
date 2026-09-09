@@ -54,6 +54,23 @@ collections:
                   - {label: "Libellé", name: "label", widget: "string"}
                   - {label: "Valeur", name: "value", widget: "string"}
 
+          - label: "Qui sommes-nous"
+            name: "quiSommesNous"
+            widget: "object"
+            fields:
+              - {label: "Photo", name: "photo", widget: "image", required: false, hint: "Photo de l'équipe ou du cabinet."}
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Texte d'introduction", name: "intro", widget: "text"}
+              - {label: "Sous-titre", name: "subheading", widget: "string"}
+              - {label: "Paragraphe 2", name: "paragraph2", widget: "text"}
+              - {label: "Paragraphe 3", name: "paragraph3", widget: "text"}
+              - label: "Chiffres-clés"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Valeur (ex: 25+)", name: "value", widget: "string"}
+                  - {label: "Libellé", name: "label", widget: "string"}
+
           - label: "A-propos"
             name: "about"
             widget: "object"

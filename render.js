@@ -181,6 +181,24 @@ async function renderSite() {
   const bgUrl = d.hero.heroImage && d.hero.heroImage.trim() ? d.hero.heroImage : goreeIllustrationDataUrl();
   cover.style.backgroundImage = `url("${bgUrl}")`;
 
+  // Qui sommes-nous
+  if (d.quiSommesNous) {
+    const q = d.quiSommesNous;
+    const qsnImg = q.photo && q.photo.trim() ? q.photo : cafPlaceholder('Photo à ajouter', 'b');
+    document.getElementById('qsnPhoto').src = qsnImg;
+    document.getElementById('qsnTitle').textContent = q.title;
+    document.getElementById('qsnIntro').textContent = q.intro;
+    document.getElementById('qsnSubheading').textContent = q.subheading;
+    document.getElementById('qsnParagraph2').textContent = q.paragraph2;
+    document.getElementById('qsnParagraph3').textContent = q.paragraph3;
+    const qsnStats = document.getElementById('qsnStats');
+    qsnStats.innerHTML = '';
+    (q.stats || []).forEach(s => {
+      const div = el('div', 'qsn-stat', `<div class="num">${s.value}</div><div class="label">${s.label}</div><div class="bar"></div>`);
+      qsnStats.appendChild(div);
+    });
+  }
+
   // About
   document.getElementById('aboutTitle').textContent = d.about.title;
   document.getElementById('aboutIntro').textContent = d.about.intro;
