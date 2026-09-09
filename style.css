@@ -277,6 +277,7 @@ section.alt{background:#fff; border-top:2px solid var(--line); border-bottom:2px
 .detail{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
 .detail-copy h2{font-family:var(--serif); font-weight:700; font-size:clamp(28px,3vw,36px); color:var(--charcoal); margin-bottom:18px; max-width:14ch;}
 .detail-copy p{color:var(--ink-soft); font-size:16.5px; font-weight:500; margin-bottom:16px; max-width:50ch;}
+.detail-copy p.section-ref{color:#fff; max-width:none;}
 .checklist{margin-top:24px; display:flex; flex-direction:column; gap:0;}
 .checklist li{
   list-style:none; display:flex; gap:12px; padding:13px 0;
