@@ -370,28 +370,53 @@ section#finance .detail{grid-template-columns:1.1fr 0.9fr;}
 .team-card p{font-size:14px; font-weight:500; color:var(--ink-soft);}
 
 /* ===== Contact ===== */
-.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
-.contact-list{display:flex; flex-direction:column; gap:24px;}
-.contact-item{display:flex; gap:16px;}
-.contact-item svg{flex:none; width:22px; height:22px; color:var(--green-deep); margin-top:2px;}
-.contact-item h4{font-size:15px; font-weight:800; color:var(--charcoal);}
-.contact-item p{font-size:15.5px; font-weight:500; color:var(--ink-soft);}
-.whatsapp-block{
-  margin-top:8px; padding:24px; background:var(--green-light); border:2px solid var(--green);
+/* ===== Contact — thème sombre ===== */
+.contact-dark{background:var(--charcoal); color:#fff; border-top:2px solid var(--line); border-bottom:2px solid var(--line);}
+.contact-dark-head{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:40px;
+  margin-bottom:56px; flex-wrap:wrap;
 }
-.whatsapp-block h4{font-size:15px; font-weight:800; color:var(--green-deep); margin-bottom:10px;}
-.whatsapp-block p{font-size:14.5px; font-weight:500; color:var(--ink-soft); margin-bottom:16px;}
-form{display:flex; flex-direction:column; gap:16px;}
-.field{display:flex; flex-direction:column; gap:6px;}
-.field label{font-size:13.5px; color:var(--ink-soft); font-weight:700;}
-.field input, .field textarea, .field select{
-  border:2px solid var(--line); background:#fff; padding:13px 14px;
-  font-family:var(--sans); font-size:15px; font-weight:500; color:var(--ink); border-radius:3px;
+.contact-dark-head h2{
+  font-family:var(--serif); font-weight:700; font-size:clamp(28px,3vw,36px);
+  color:#fff; max-width:16ch; margin-top:12px;
 }
-.field input:focus, .field textarea:focus, .field select:focus{
+.contact-dark-head .contact-lead{color:#B7BEB9; font-size:15.5px; font-weight:500; max-width:40ch;}
+.contact-dark-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px;}
+.contact-list-dark{display:flex; flex-direction:column; gap:24px;}
+.contact-item-dark{display:flex; gap:16px;}
+.contact-item-dark .ci-icon{
+  flex:none; width:44px; height:44px; border-radius:6px;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+  display:flex; align-items:center; justify-content:center;
+}
+.contact-item-dark .ci-icon svg{width:20px; height:20px; color:#fff;}
+.contact-item-dark h4{font-size:15px; font-weight:800; color:#fff; margin-bottom:4px;}
+.contact-item-dark p{font-size:14.5px; font-weight:500; color:#B7BEB9;}
+.whatsapp-block-dark{margin-top:8px;}
+.contact-form-dark{display:flex; flex-direction:column; gap:14px;}
+.field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.field-dark input, .field-dark select, .field-dark textarea{
+  width:100%; border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.05);
+  padding:13px 14px; font-family:var(--sans); font-size:14.5px; font-weight:500;
+  color:#fff; border-radius:3px;
+}
+.field-dark input::placeholder, .field-dark textarea::placeholder{color:#9BA39D;}
+.field-dark select{color:#9BA39D;}
+.field-dark select:valid{color:#fff;}
+.field-dark input:focus, .field-dark select:focus, .field-dark textarea:focus{
   outline:none; border-color:var(--green);
 }
-.field textarea{resize:vertical; min-height:100px;}
+.field-dark textarea{resize:vertical; min-height:110px;}
+.btn-send-dark{
+  align-self:flex-start; background:#B23A2E; color:#fff; border:none;
+  padding:15px 30px; font-weight:700; font-size:15px; border-radius:3px; cursor:pointer;
+  margin-top:6px;
+}
+.btn-send-dark:hover{background:#96301F;}
+@media (max-width:760px){
+  .contact-dark-grid{grid-template-columns:1fr;}
+  .field-row{grid-template-columns:1fr;}
+}
 
 /* ===== Footer ===== */
 footer{background:var(--charcoal); color:#D6DAD6; padding:56px 0 28px;}
@@ -417,7 +442,7 @@ footer ul a:hover{color:#fff;}
 .wa-float:hover{background:#1DA851;}
 
 @media (max-width:860px){
-  .hero-grid, .about-grid, .detail, .contact-grid{grid-template-columns:1fr;}
+  .hero-grid, .about-grid, .detail{grid-template-columns:1fr;}
   section#finance .detail{grid-template-columns:1fr;}
   .service-row{grid-template-columns:1fr; gap:8px;}
   .foot-grid{grid-template-columns:1fr; gap:28px;}

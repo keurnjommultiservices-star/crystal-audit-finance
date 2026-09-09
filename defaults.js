@@ -451,7 +451,9 @@ const CAF_DEFAULT_DATA = {
     ]
   },
   "contact": {
-    "intro": "Premier échange sans engagement pour cadrer vos besoins et vous orienter vers le bon interlocuteur du cabinet.",
+    "sectionLabel": "Prendre contact",
+    "title": "Contactez-nous pour toute demande d'aide ou d'information.",
+    "intro": "Nous sommes heureux de discuter de la situation de votre organisation. N'hésitez pas à nous contacter en utilisant les coordonnées ci-dessous ou en saisissant votre demande.",
     "address": "16-162 Rue A, Dakar",
     "phone": "+221 33 860 08 35 — +221 76 158 14 92 / 78 476 85 20",
     "whatsappNumber": "221784768520",

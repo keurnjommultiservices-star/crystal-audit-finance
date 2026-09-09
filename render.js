@@ -325,6 +325,8 @@ async function renderSite() {
   });
 
   // Contact
+  if (d.contact.sectionLabel) document.getElementById('contactSectionLabel').textContent = d.contact.sectionLabel;
+  if (d.contact.title) document.getElementById('contactTitle').textContent = d.contact.title;
   document.getElementById('contactIntro').textContent = d.contact.intro;
   document.getElementById('contactAddress').textContent = d.contact.address;
   document.getElementById('contactPhone').textContent = d.contact.phone;
