@@ -61,7 +61,7 @@ const CAF_DEFAULT_DATA = {
     "greenLight": "#E4ECF3"
   },
   "hero": {
-    "heroImage": "",
+    "heroImage": "/uploads/hero-goree.jpg",
     "eyebrow": "Cabinet d'audit, d'expertise comptable et de conseil",
     "title": "Des comptes clairs, des décisions sûres.",
     "lead": "Crystal Audit Finance accompagne entreprises, associations et institutions à Dakar et sur toute la Petite Côte : audit légal et contractuel, tenue comptable SYSCOHADA et SYCEBNL, fiscalité, formation et ingénierie financière.",
