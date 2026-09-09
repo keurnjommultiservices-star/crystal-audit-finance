@@ -42,11 +42,11 @@ header{
   border-bottom:2px solid var(--line);
 }
 .headbar{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center; justify-content:space-between; gap:40px;
   padding:20px 32px;
   max-width:1180px; margin:0 auto;
 }
-.brand{display:flex; align-items:center; gap:14px;}
+.brand{display:flex; align-items:center; gap:14px; flex:none;}
 .brand-mark{width:42px; height:42px;}
 .brand-name{
   font-family:var(--serif); font-size:21px; font-weight:700;
