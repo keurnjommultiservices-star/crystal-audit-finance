@@ -15,6 +15,12 @@ collections:
         label: "Contenu du site"
         name: "site"
         fields:
+          - label: "Bande défilante"
+            name: "ticker"
+            widget: "object"
+            fields:
+              - {label: "Texte défilant", name: "text", widget: "string", hint: "Laisser vide pour masquer la bande."}
+
           - label: "Marque"
             name: "brand"
             widget: "object"
@@ -102,6 +108,7 @@ collections:
                   - {label: "Code (ex : Audit)", name: "code", widget: "string"}
                   - {label: "Titre", name: "title", widget: "string"}
                   - {label: "Description", name: "desc", widget: "text"}
+                  - {label: "Puces (optionnel)", name: "points", widget: "list", required: false}
 
           - label: "Audit"
             name: "audit"
@@ -160,6 +167,13 @@ collections:
                 fields:
                   - {label: "Libellé", name: "label", widget: "string"}
                   - {label: "Valeur", name: "value", widget: "string"}
+              - label: "Cartes détaillées"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - {label: "Photo", name: "photo", widget: "image", required: false}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Puces", name: "items", widget: "list"}
 
           - label: "Formation"
             name: "formation"
@@ -196,6 +210,17 @@ collections:
                 fields:
                   - {label: "Libellé", name: "label", widget: "string"}
                   - {label: "Valeur", name: "value", widget: "string"}
+              - {label: "Sous-titre (accroche)", name: "subheading", widget: "string", required: false}
+              - {label: "Texte sous l'accroche", name: "subheadingText", widget: "text", required: false}
+              - label: "Carte mission"
+                name: "missionCard"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
+                  - {label: "Titre de la liste d'étapes", name: "stepsTitle", widget: "string"}
+                  - {label: "Étapes", name: "steps", widget: "list"}
 
           - label: "Équipe"
             name: "team"
@@ -207,10 +232,11 @@ collections:
                 name: "members"
                 widget: "list"
                 fields:
+                  - {label: "Photo (optionnel — sinon initiales affichées)", name: "photo", widget: "image", required: false}
                   - {label: "Initiales", name: "initials", widget: "string"}
                   - {label: "Nom", name: "name", widget: "string"}
                   - {label: "Fonction", name: "role", widget: "string"}
-                  - {label: "Description", name: "desc", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
 
           - label: "Contact"
             name: "contact"
