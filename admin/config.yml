@@ -244,6 +244,8 @@ collections:
             name: "contact"
             widget: "object"
             fields:
+              - {label: "Petit label au-dessus du titre", name: "sectionLabel", widget: "string"}
+              - {label: "Titre principal", name: "title", widget: "string"}
               - {label: "Texte d'introduction", name: "intro", widget: "text"}
               - {label: "Adresse", name: "address", widget: "string"}
               - {label: "Téléphone (affiché)", name: "phone", widget: "string"}
