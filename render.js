@@ -353,9 +353,9 @@ async function renderSite() {
   });
 
   // Contact
-  const contactSection = document.getElementById('contacts');
+  const contactBgImg = document.getElementById('contactBgImg');
   const contactBg = d.contact.backgroundImage && d.contact.backgroundImage.trim() ? d.contact.backgroundImage : contactSilhouettesDataUrl();
-  contactSection.style.backgroundImage = `url("${contactBg}")`;
+  contactBgImg.style.backgroundImage = `url("${contactBg}")`;
   if (d.contact.sectionLabel) document.getElementById('contactSectionLabel').textContent = d.contact.sectionLabel;
   if (d.contact.title) document.getElementById('contactTitle').textContent = d.contact.title;
   document.getElementById('contactIntro').textContent = d.contact.intro;

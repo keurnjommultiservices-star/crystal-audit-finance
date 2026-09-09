@@ -374,14 +374,18 @@ section#finance .detail{grid-template-columns:1.1fr 0.9fr;}
 .contact-dark{
   position:relative; color:#fff; overflow:hidden;
   border-top:2px solid var(--line); border-bottom:2px solid var(--line);
-  background-color:var(--green-deep); background-size:cover; background-position:center;
+  background-color:var(--green-deep);
+}
+.contact-bg-img{
+  position:absolute; inset:0; z-index:0;
+  background-size:cover; background-position:center;
+  filter:brightness(0.42) saturate(0.75) blur(0.5px);
 }
 .contact-dark::before{
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(160deg, rgba(18,58,87,0.94) 0%, rgba(15,35,50,0.92) 55%, rgba(10,22,32,0.96) 100%);
-  z-index:0;
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(160deg, rgba(18,58,87,0.93) 0%, rgba(15,35,50,0.94) 55%, rgba(10,22,32,0.97) 100%);
 }
-.contact-dark > .wrap{position:relative; z-index:1;}
+.contact-dark > .wrap{position:relative; z-index:2;}
 .contact-dark-head{
   display:flex; justify-content:space-between; align-items:flex-end; gap:40px;
   margin-bottom:56px; flex-wrap:wrap;
