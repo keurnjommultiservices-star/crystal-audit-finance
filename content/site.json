@@ -365,11 +365,17 @@
     "intro": "Notre équipe d'experts vous aidera.",
     "members": [
       {
-        "photo": "",
+        "photo": "/uploads/ibou-ba-dg.png",
         "initials": "IB",
         "name": "Ibrahima BA",
         "role": "Expert-Comptable, Commissaire aux Comptes",
         "desc": "Bénéficie d'une expérience de 30 ans en tant qu'auditeur, Directeur Administratif et Financier d'organismes internationaux, Directeur Général et consultant international. Sa connaissance profonde des problématiques de l'entreprise lui permet de fournir des conseils avisés. Il a permis de lever des financements majeurs pour le privé et les pouvoirs publics dans plusieurs pays en Afrique."
+      },
+      {
+        "initials": "MK",
+        "name": "MOUHAMED KONE",
+        "role": "Comptable Associé - Formateur",
+        "desc": "Bénéficie d'une expérience de 30 ans en tant qye Comptable et Formateur. Bonne maitrise des operations compatbles et fiscales"
       }
     ]
   },
