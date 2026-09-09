@@ -1,9 +1,8 @@
 /* Rendu dynamique de index.html à partir de content/site.json */
 
 function goreeIllustrationDataUrl() {
-  // Illustration stylisée de l'Île de Gorée (silhouette des maisons ocre,
-  // fort et mer) en SVG, utilisée par défaut tant qu'aucune vraie photo
-  // n'a été chargée depuis l'admin.
+  // Illustration stylisée de l'Île de Gorée, utilisée uniquement si
+  // aucune photo n'a été chargée depuis l'admin.
   const svg = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 460" preserveAspectRatio="xMidYMax slice">
     <defs>
@@ -18,9 +17,7 @@ function goreeIllustrationDataUrl() {
     </defs>
     <rect width="1400" height="460" fill="url(#sky)"/>
     <rect y="300" width="1400" height="160" fill="url(#sea)"/>
-    <!-- promontoire / falaise -->
     <path d="M0,300 L0,220 Q120,180 220,230 L320,300 Z" fill="#5C6B57" opacity="0.55"/>
-    <!-- ligne de maisons ocre / bâtiments coloniaux -->
     <g>
       <rect x="120" y="240" width="70" height="60" fill="#B5602F"/>
       <rect x="120" y="230" width="70" height="14" fill="#7A3A1D"/>
@@ -36,7 +33,6 @@ function goreeIllustrationDataUrl() {
       <rect x="470" y="248" width="45" height="12" fill="#7A3A1D"/>
       <rect x="525" y="238" width="60" height="62" fill="#A8532B"/>
       <rect x="525" y="226" width="60" height="14" fill="#5C2C15"/>
-      <!-- fenêtres -->
       <g fill="#F2E6D6" opacity="0.85">
         <rect x="135" y="255" width="10" height="14"/>
         <rect x="160" y="255" width="10" height="14"/>
@@ -49,7 +45,6 @@ function goreeIllustrationDataUrl() {
         <rect x="565" y="252" width="10" height="14"/>
       </g>
     </g>
-    <!-- fort / bastion à droite -->
     <g fill="#8A8478">
       <rect x="1080" y="250" width="220" height="55" />
       <rect x="1080" y="235" width="20" height="20"/>
@@ -59,12 +54,10 @@ function goreeIllustrationDataUrl() {
       <rect x="1240" y="235" width="20" height="20"/>
       <rect x="1280" y="235" width="20" height="20"/>
     </g>
-    <!-- baobab stylisé -->
     <g fill="#3E4A3B">
       <rect x="660" y="255" width="10" height="45"/>
       <ellipse cx="665" cy="245" rx="34" ry="24"/>
     </g>
-    <!-- vagues -->
     <g stroke="#EAF3EC" stroke-width="3" fill="none" opacity="0.5">
       <path d="M0,330 Q40,320 80,330 T160,330 T240,330 T320,330 T400,330 T480,330 T560,330 T640,330 T720,330 T800,330 T880,330 T960,330 T1040,330 T1120,330 T1200,330 T1280,330 T1360,330"/>
       <path d="M0,370 Q40,360 80,370 T160,370 T240,370 T320,370 T400,370 T480,370 T560,370 T640,370 T720,370 T800,370 T880,370 T960,370 T1040,370 T1120,370 T1200,370 T1280,370 T1360,370"/>
@@ -72,6 +65,7 @@ function goreeIllustrationDataUrl() {
   </svg>`;
   return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
 }
+
 
 function el(tag, className, html) {
   const e = document.createElement(tag);
@@ -164,6 +158,14 @@ async function renderSite() {
 
   applyColors(d.colors);
 
+  // Bande défilante
+  if (d.ticker && d.ticker.text) {
+    const track = document.getElementById('tickerTrack');
+    track.innerHTML = `<span>${d.ticker.text}</span><span>${d.ticker.text}</span>`;
+  } else {
+    document.getElementById('tickerBar').style.display = 'none';
+  }
+
   document.getElementById('brandAccent').textContent = d.brand.accentWord;
   document.getElementById('brandName').childNodes[0].textContent = d.brand.name.replace(d.brand.accentWord, '').trim() + ' ';
   document.getElementById('footBrandName').textContent = d.brand.name;
@@ -180,7 +182,6 @@ async function renderSite() {
   const heroSection = document.getElementById('accueil');
   const bgUrl = d.hero.heroImage && d.hero.heroImage.trim() ? d.hero.heroImage : goreeIllustrationDataUrl();
   heroSection.style.backgroundImage = `url("${bgUrl}")`;
-
   // Qui sommes-nous
   if (d.quiSommesNous) {
     const q = d.quiSommesNous;
@@ -220,7 +221,10 @@ async function renderSite() {
   const servicesList = document.getElementById('servicesList');
   servicesList.innerHTML = '';
   d.services.items.forEach(s => {
-    const row = el('div', 'service-row', `<span class="code">${s.code}</span><h3>${s.title}</h3><p>${s.desc}</p>`);
+    const pointsHtml = (s.points && s.points.length)
+      ? `<ul class="service-points">${s.points.map(p => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${p}</li>`).join('')}</ul>`
+      : '';
+    const row = el('div', 'service-row', `<span class="code">${s.code}</span><h3>${s.title}</h3><div><p>${s.desc}</p>${pointsHtml}</div>`);
     servicesList.appendChild(row);
   });
 
@@ -238,6 +242,14 @@ async function renderSite() {
   renderChecklist(document.getElementById('conseilsChecklist'), d.conseils.checklist);
   document.getElementById('conseilsStatTitle').textContent = d.conseils.statTitle;
   renderStatRows(document.getElementById('conseilsStats'), d.conseils.stats);
+  const conseilCards = document.getElementById('conseilCards');
+  conseilCards.innerHTML = '';
+  (d.conseils.cards || []).forEach((c, i) => {
+    const url = c.photo && c.photo.trim() ? c.photo : cafPlaceholder(c.title || 'Photo à ajouter', ['a', 'b', 'c'][i % 3]);
+    const itemsHtml = (c.items || []).map(it => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${it}</li>`).join('');
+    const card = el('div', 'conseil-card', `<img src="${url}" alt="${c.title}"><div class="body"><h3>${c.title}</h3><ul>${itemsHtml}</ul></div>`);
+    conseilCards.appendChild(card);
+  });
 
   // Formation
   document.getElementById('formationTitle').textContent = d.formation.title;
@@ -259,6 +271,21 @@ async function renderSite() {
   renderChecklist(document.getElementById('financeChecklist'), d.finance.checklist);
   document.getElementById('financeStatTitle').textContent = d.finance.statTitle;
   renderStatRows(document.getElementById('financeStats'), d.finance.stats);
+  const financeMission = document.getElementById('financeMission');
+  if (d.finance.missionCard) {
+    const mc = d.finance.missionCard;
+    const stepsHtml = (mc.steps || []).map(s => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${s}</li>`).join('');
+    financeMission.innerHTML = `
+      ${d.finance.subheading ? `<div class="fm-subheading">${d.finance.subheading}</div>` : ''}
+      ${d.finance.subheadingText ? `<p class="fm-subtext">${d.finance.subheadingText}</p>` : ''}
+      <div class="fm-card-title">${mc.title}</div>
+      <p class="fm-card-desc">${mc.desc}</p>
+      ${mc.stepsTitle ? `<div class="fm-steps-title">${mc.stepsTitle}</div>` : ''}
+      <ul class="fm-steps">${stepsHtml}</ul>
+    `;
+  } else {
+    financeMission.style.display = 'none';
+  }
 
   // Team
   document.getElementById('teamTitle').textContent = d.team.title;
@@ -266,7 +293,8 @@ async function renderSite() {
   const teamGrid = document.getElementById('teamGrid');
   teamGrid.innerHTML = '';
   d.team.members.forEach(m => {
-    const card = el('div', 'team-card', `<div class="team-avatar">${m.initials}</div><h4>${m.name}</h4><p class="role">${m.role}</p><p>${m.desc}</p>`);
+    const avatarInner = (m.photo && m.photo.trim()) ? `<img src="${m.photo}" alt="${m.name}">` : m.initials;
+    const card = el('div', 'team-card', `<div class="team-avatar">${avatarInner}</div><h4>${m.name}</h4><p class="role">${m.role}</p><p>${m.desc}</p>`);
     teamGrid.appendChild(card);
   });
 

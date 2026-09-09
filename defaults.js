@@ -49,6 +49,9 @@ const CAF_DEFAULT_DATA = {
     "name": "Crystal Audit Finance",
     "accentWord": "Finance"
   },
+  "ticker": {
+    "text": "FORMATION AU SYSTÈME SYCEBNL POUR LES ONG INTERNATIONAUX"
+  },
   "colors": {
     "charcoal": "#262B27",
     "ink": "#1B1E1B",
@@ -150,7 +153,18 @@ const CAF_DEFAULT_DATA = {
       {
         "code": "Audit",
         "title": "Audit légal & contractuel",
-        "desc": "Commissariat aux comptes, audit d'acquisition, revue de contrôle interne et missions ponctuelles à la demande des associés ou des bailleurs."
+        "desc": "Commissariat aux comptes, audit d'acquisition, revue de contrôle interne et missions ponctuelles à la demande des associés ou des bailleurs.",
+        "points": [
+          "Expertise comptable",
+          "Commissariat aux Comptes",
+          "Audit légal et contractuel",
+          "Conseil en gestion et organisation",
+          "Redressement et liquidation judiciaire",
+          "Conseil juridique et fiscal",
+          "Due diligence",
+          "Assistance passation de marchés",
+          "Formation"
+        ]
       },
       {
         "code": "Conseils",
@@ -165,7 +179,18 @@ const CAF_DEFAULT_DATA = {
       {
         "code": "Finance",
         "title": "Ingénierie & structuration financière",
-        "desc": "Montage de dossiers de financement, business plans, tableaux de bord et accompagnement auprès des banques et investisseurs."
+        "desc": "Montage de dossiers de financement, business plans, tableaux de bord et accompagnement auprès des banques et investisseurs.",
+        "points": [
+          "Dette senior",
+          "Mezzanine",
+          "Capital risque – Equity",
+          "Crédit export",
+          "Crédit-bail",
+          "Subvention",
+          "Partenariat Public Privé",
+          "Garantie",
+          "Promotion des investissements"
+        ]
       }
     ]
   },
@@ -293,6 +318,34 @@ const CAF_DEFAULT_DATA = {
         "label": "Paie & droit social",
         "value": "Récurrent"
       }
+    ],
+    "cards": [
+      {
+        "photo": "",
+        "title": "Conseil en création d'entreprise",
+        "items": [
+          "Assistance dans le choix du statut juridique de l'entreprise",
+          "Assistance auprès des tiers, banques, notaires, avocats",
+          "Adopter le meilleur statut social et fiscal pour vous et votre entreprise",
+          "Évaluation d'entreprises et assistance à la reprise d'entreprises",
+          "Établir le prévisionnel et le plan de financement",
+          "Rédaction de votre business plan",
+          "Étude d'implantation dans les meilleurs sites",
+          "Optimiser la gestion de votre entreprise une fois créée"
+        ]
+      },
+      {
+        "photo": "",
+        "title": "Reprise d'entreprise",
+        "items": [
+          "Audit d'acquisition de l'entreprise cible",
+          "Évaluation d'entreprise",
+          "Établissement d'un business plan",
+          "Étude et Optimisation du montage de rachat",
+          "Aide à la recherche et choix de financement",
+          "Assistance dans les relations avec les banques"
+        ]
+      }
     ]
   },
   "formation": {
@@ -362,35 +415,36 @@ const CAF_DEFAULT_DATA = {
         "label": "Bailleurs & ONG",
         "value": "Subvention"
       }
-    ]
+    ],
+    "subheading": "Conseil en recherche de financement",
+    "subheadingText": "Notre équipe de consultants expérimentés vous accompagne dans la recherche des financements correspondant à votre projet d'investissement.",
+    "missionCard": {
+      "title": "Levée de dettes et financement structuré",
+      "desc": "Grâce à son réseau de partenaires, Crystal Audit Finance vous fait bénéficier de contacts de premier choix : Bailleurs de fonds internationaux, banques, Agences de crédit Export et fonds d'investissement. Nos experts vous offrent une accessibilité rapide à la solution de financement adaptée.",
+      "stepsTitle": "Notre mission se déroule comme suit :",
+      "steps": [
+        "Identification de vos besoins",
+        "Participation à l'élaboration de votre business plan",
+        "Identification et approche d'organismes financiers potentiels",
+        "Élaboration d'une note d'information destinée aux bailleurs potentiels",
+        "Suivi de l'étude du dossier, et conseil lors d'éventuelles Due Diligences",
+        "Organisation des contacts, réunions et visites",
+        "Négociation à l'obtention d'un taux préférentiel",
+        "Finalisation et mise en place du financement",
+        "Suivi post financement"
+      ]
+    }
   },
   "team": {
     "title": "L'équipe qui suit votre dossier",
-    "intro": "Un pôle resserré, pour que le consultant qui signe votre rapport soit celui qui a suivi la mission de bout en bout.",
+    "intro": "Notre équipe d'experts vous aidera.",
     "members": [
       {
-        "initials": "AD",
-        "name": "Amadou Diallo",
-        "role": "Associé fondateur — Expert-comptable",
-        "desc": "15 ans de pratique du commissariat aux comptes et de la due diligence."
-      },
-      {
-        "initials": "FS",
-        "name": "Fatou Sarr",
-        "role": "Directrice Audit",
-        "desc": "Pilotage des missions légales et des audits sur financement."
-      },
-      {
-        "initials": "MN",
-        "name": "Moussa Ndiaye",
-        "role": "Responsable Fiscalité",
-        "desc": "Conseil fiscal et accompagnement des contrôles DGID."
-      },
-      {
-        "initials": "KB",
-        "name": "Khady Ba",
-        "role": "Responsable Formation & Finance",
-        "desc": "Sessions de formation et montage de dossiers de financement."
+        "photo": "",
+        "initials": "IB",
+        "name": "Ibrahima BA",
+        "role": "Expert-Comptable, Commissaire aux Comptes",
+        "desc": "Bénéficie d'une expérience de 30 ans en tant qu'auditeur, Directeur Administratif et Financier d'organismes internationaux, Directeur Général et consultant international. Sa connaissance profonde des problématiques de l'entreprise lui permet de fournir des conseils avisés. Il a permis de lever des financements majeurs pour le privé et les pouvoirs publics dans plusieurs pays en Afrique."
       }
     ]
   },
