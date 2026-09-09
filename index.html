@@ -301,7 +301,7 @@
       <span id="footOrderLine"></span>
     </div>
     <div class="foot-bottom" style="border-top:none; padding-top:8px;">
-      <a href="admin.html" style="color:#5C635C; font-size:12px;">Administration du site</a>
+      <a href="/admin/" style="color:#5C635C; font-size:12px;">Administration du site</a>
     </div>
   </div>
 </footer>
@@ -310,7 +310,17 @@
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.33 4.99L2 22l5.2-1.36a9.94 9.94 0 0 0 4.84 1.23h.01c5.5 0 9.96-4.46 9.96-9.96S17.55 2 12.04 2Zm0 18.2c-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.08.81.82-3-.2-.31a8.2 8.2 0 0 1-1.26-4.4c0-4.53 3.68-8.21 8.22-8.21 4.53 0 8.21 3.68 8.21 8.21 0 4.53-3.68 8.24-8.17 8.24Z"/></svg>
 </a>
 
-<script src="data.js"></script>
+<script src="defaults.js"></script>
 <script src="render.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+      }
+    });
+  }
+</script>
 </body>
 </html>

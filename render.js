@@ -1,4 +1,4 @@
-/* Rendu dynamique de index.html à partir de cafLoadData() */
+/* Rendu dynamique de index.html à partir de content/site.json */
 
 function goreeIllustrationDataUrl() {
   // Illustration stylisée de l'Île de Gorée (silhouette des maisons ocre,
@@ -159,8 +159,8 @@ function applyColors(c) {
   root.setProperty('--green-light', c.greenLight);
 }
 
-function renderSite() {
-  const d = cafLoadData();
+async function renderSite() {
+  const d = await cafFetchData();
 
   applyColors(d.colors);
 

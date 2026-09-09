@@ -1,0 +1,216 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "fr"
+
+collections:
+  - name: "site"
+    label: "Site"
+    files:
+      - file: "content/site.json"
+        label: "Contenu du site"
+        name: "site"
+        fields:
+          - label: "Marque"
+            name: "brand"
+            widget: "object"
+            fields:
+              - {label: "Nom complet du cabinet", name: "name", widget: "string"}
+              - {label: "Mot mis en avant (accent)", name: "accentWord", widget: "string"}
+
+          - label: "Couleurs"
+            name: "colors"
+            widget: "object"
+            fields:
+              - {label: "Anthracite (titres)", name: "charcoal", widget: "color"}
+              - {label: "Encre (texte)", name: "ink", widget: "color"}
+              - {label: "Encre douce (texte secondaire)", name: "inkSoft", widget: "color"}
+              - {label: "Papier (fond)", name: "paper", widget: "color"}
+              - {label: "Papier 2 (fond alterné)", name: "paper2", widget: "color"}
+              - {label: "Ligne (bordures)", name: "line", widget: "color"}
+              - {label: "Bleu principal", name: "green", widget: "color"}
+              - {label: "Bleu foncé", name: "greenDeep", widget: "color"}
+              - {label: "Bleu clair (fonds)", name: "greenLight", widget: "color"}
+
+          - label: "Accueil"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Photo de fond (Île de Gorée)", name: "heroImage", widget: "image", required: false, hint: "Laisser vide pour garder l'illustration par défaut."}
+              - {label: "Phrase d'introduction", name: "eyebrow", widget: "string"}
+              - {label: "Titre principal", name: "title", widget: "string"}
+              - {label: "Texte d'introduction", name: "lead", widget: "text"}
+              - {label: "Bouton principal", name: "ctaPrimary", widget: "string"}
+              - {label: "Bouton secondaire", name: "ctaSecondary", widget: "string"}
+              - {label: "Titre de l'encadré", name: "ledgerTitle", widget: "string"}
+              - label: "Lignes de l'encadré"
+                name: "ledgerRows"
+                widget: "list"
+                fields:
+                  - {label: "Libellé", name: "label", widget: "string"}
+                  - {label: "Valeur", name: "value", widget: "string"}
+
+          - label: "A-propos"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Texte d'introduction", name: "intro", widget: "text"}
+              - {label: "Encadré 1 — grand texte", name: "figureBigA", widget: "string"}
+              - {label: "Encadré 1 — légende", name: "figureCapA", widget: "string"}
+              - {label: "Encadré 2 — grand texte", name: "figureBigB", widget: "string"}
+              - {label: "Encadré 2 — légende", name: "figureCapB", widget: "string"}
+              - {label: "Paragraphes de présentation", name: "paragraphs", widget: "list"}
+              - label: "Valeurs (piliers)"
+                name: "pillars"
+                widget: "list"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "string"}
+
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Texte d'introduction", name: "intro", widget: "text"}
+              - label: "Pôles"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Code (ex : Audit)", name: "code", widget: "string"}
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "text"}
+
+          - label: "Audit"
+            name: "audit"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Paragraphe d'introduction", name: "paragraphs", widget: "list"}
+              - label: "Onglets"
+                name: "tabs"
+                widget: "object"
+                fields:
+                  - label: "Expertise comptable"
+                    name: "expertise"
+                    widget: "object"
+                    fields:
+                      - {label: "Libellé de l'onglet", name: "label", widget: "string"}
+                      - {label: "Accroche", name: "tagline", widget: "text"}
+                      - label: "Groupes (Établit, Pilote, Élabore, Participe...)"
+                        name: "groups"
+                        widget: "list"
+                        fields:
+                          - {label: "Titre du groupe", name: "title", widget: "string"}
+                          - {label: "Puces", name: "items", widget: "list"}
+                  - label: "Commissariat aux comptes"
+                    name: "commissariat"
+                    widget: "object"
+                    fields:
+                      - {label: "Libellé de l'onglet", name: "label", widget: "string"}
+                      - {label: "Accroche", name: "tagline", widget: "text"}
+                      - label: "Groupes (Nous procédons, Par ailleurs...)"
+                        name: "groups"
+                        widget: "list"
+                        fields:
+                          - {label: "Titre du groupe", name: "title", widget: "string"}
+                          - {label: "Puces", name: "items", widget: "list"}
+              - {label: "Autres missions (liste à puces)", name: "checklist", widget: "list"}
+              - {label: "Titre de l'encadré", name: "statTitle", widget: "string"}
+              - label: "Lignes de l'encadré"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Libellé", name: "label", widget: "string"}
+                  - {label: "Valeur", name: "value", widget: "string"}
+
+          - label: "Conseils"
+            name: "conseils"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Paragraphes", name: "paragraphs", widget: "list"}
+              - {label: "Liste à puces", name: "checklist", widget: "list"}
+              - {label: "Titre de l'encadré", name: "statTitle", widget: "string"}
+              - label: "Lignes de l'encadré"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Libellé", name: "label", widget: "string"}
+                  - {label: "Valeur", name: "value", widget: "string"}
+
+          - label: "Formation"
+            name: "formation"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Paragraphes", name: "paragraphs", widget: "list"}
+              - {label: "Liste à puces", name: "checklist", widget: "list"}
+              - {label: "Titre de l'encadré", name: "statTitle", widget: "string"}
+              - label: "Lignes de l'encadré"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Libellé", name: "label", widget: "string"}
+                  - {label: "Valeur", name: "value", widget: "string"}
+              - label: "Photos"
+                name: "photos"
+                widget: "list"
+                fields:
+                  - {label: "Photo", name: "url", widget: "image"}
+                  - {label: "Légende", name: "caption", widget: "string"}
+
+          - label: "Finance"
+            name: "finance"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Paragraphes", name: "paragraphs", widget: "list"}
+              - {label: "Liste à puces", name: "checklist", widget: "list"}
+              - {label: "Titre de l'encadré", name: "statTitle", widget: "string"}
+              - label: "Lignes de l'encadré"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Libellé", name: "label", widget: "string"}
+                  - {label: "Valeur", name: "value", widget: "string"}
+
+          - label: "Équipe"
+            name: "team"
+            widget: "object"
+            fields:
+              - {label: "Titre de la section", name: "title", widget: "string"}
+              - {label: "Texte d'introduction", name: "intro", widget: "text"}
+              - label: "Membres"
+                name: "members"
+                widget: "list"
+                fields:
+                  - {label: "Initiales", name: "initials", widget: "string"}
+                  - {label: "Nom", name: "name", widget: "string"}
+                  - {label: "Fonction", name: "role", widget: "string"}
+                  - {label: "Description", name: "desc", widget: "string"}
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Texte d'introduction", name: "intro", widget: "text"}
+              - {label: "Adresse", name: "address", widget: "string"}
+              - {label: "Téléphone (affiché)", name: "phone", widget: "string"}
+              - {label: "Numéro WhatsApp (chiffres uniquement, ex: 221784768520)", name: "whatsappNumber", widget: "string"}
+              - {label: "Message WhatsApp pré-rempli", name: "whatsappMessage", widget: "string"}
+              - {label: "E-mail", name: "email", widget: "string"}
+              - {label: "Horaires", name: "hours", widget: "string"}
+
+          - label: "Pied de page"
+            name: "footer"
+            widget: "object"
+            fields:
+              - {label: "Description du cabinet", name: "desc", widget: "text"}
+              - {label: "Mention de l'ordre professionnel", name: "orderLine", widget: "string"}
+              - {label: "Année (copyright)", name: "year", widget: "string"}
