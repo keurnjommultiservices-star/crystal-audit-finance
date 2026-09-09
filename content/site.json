@@ -42,6 +42,14 @@
       }
     ]
   },
+  "quiSommesNous": {
+    "photo": "/uploads/photo-qui-sommes-nous.png",
+    "intro": "CRYSTAL AUDIT & FINANCE est un cabinet d’expertise comptable, d’audit légal et contractuel – commissaire aux comptes et de conseils aux entreprises",
+    "title": "Qui Sommesènous ?",
+    "subheading": "Pourquoi passer par le cabinet CRYSTAL AUDIT & FINANCE?",
+    "paragraph2": "Passer par le cabinet CRYSTAL AUDIT & FINANCE vous fait bénéficier du savoir et des compétences d’une équipe spécialisée en audit et financement.",
+    "paragraph3": "Notre équipe de professionnels expérimentés fournit des solutions et des conseils financiers judicieux parce que la satisfaction du client est notre priorité absolue."
+  },
   "colors": {
     "green": "#1F5C8C",
     "paper2": "#ECF2ED",
