@@ -177,9 +177,9 @@ async function renderSite() {
   document.getElementById('heroLedgerTitle').textContent = d.hero.ledgerTitle;
   renderLedgerRows(document.getElementById('heroLedgerRows'), d.hero.ledgerRows);
 
-  const cover = document.getElementById('heroCover');
+  const heroSection = document.getElementById('accueil');
   const bgUrl = d.hero.heroImage && d.hero.heroImage.trim() ? d.hero.heroImage : goreeIllustrationDataUrl();
-  cover.style.backgroundImage = `url("${bgUrl}")`;
+  heroSection.style.backgroundImage = `url("${bgUrl}")`;
 
   // Qui sommes-nous
   if (d.quiSommesNous) {

@@ -82,9 +82,23 @@ nav.primary a.nav-wrap{
 /* ===== Hero ===== */
 .hero{
   position:relative;
-  padding:100px 0 0;
+  padding:100px 0 90px;
   overflow:hidden;
   border-bottom:2px solid var(--line);
+  background-size:cover;
+  background-position:center;
+}
+.hero::before{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(246,245,241,0.97) 0%, rgba(246,245,241,0.92) 42%, rgba(246,245,241,0.6) 75%, rgba(246,245,241,0.35) 100%);
+  z-index:0;
+}
+.hero > .wrap{position:relative; z-index:1;}
+.hero-caption{
+  position:absolute; right:32px; bottom:20px; z-index:2;
+  font-family:var(--serif); font-style:italic; font-weight:600; font-size:13.5px;
+  color:#fff; background:rgba(18,58,87,0.75); padding:6px 14px; border-radius:3px;
 }
 .hero-grid{
   display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
@@ -134,19 +148,6 @@ nav.primary a.nav-wrap{
 .ledger-row:last-child{border-bottom:none;}
 .ledger-row .num{
   font-variant-numeric:tabular-nums; font-weight:800; color:var(--green-deep); font-size:16.5px;
-}
-
-.hero-cover{
-  height:300px; margin-top:70px;
-  position:relative; overflow:hidden;
-  border-top:2px solid var(--line);
-  background-size:cover; background-position:center;
-}
-.hero-cover svg{position:absolute; bottom:0; left:0; width:100%; height:100%;}
-.hero-cover .cover-caption{
-  position:absolute; left:32px; bottom:16px; z-index:2;
-  font-family:var(--serif); font-style:italic; font-weight:600; font-size:14px;
-  color:#fff; background:rgba(20,83,45,0.75); padding:6px 14px; border-radius:3px;
 }
 
 /* ===== Section shell ===== */
