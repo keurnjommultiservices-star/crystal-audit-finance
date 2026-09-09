@@ -74,11 +74,29 @@ function el(tag, className, html) {
   return e;
 }
 
+const LEDGER_ICONS = {
+  clipboard: '<rect x="6" y="3" width="12" height="4" rx="1"/><path d="M6 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1"/><polyline points="9 13 11 15 15 11"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/>',
+  building: '<rect x="4" y="3" width="16" height="18"/><line x1="9" y1="7" x2="9" y2="7"/><line x1="15" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="9" y2="11"/><line x1="15" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="9" y2="15"/><line x1="15" y1="15" x2="15" y2="15"/><line x1="10" y1="21" x2="10" y2="17"/><line x1="14" y1="21" x2="14" y2="17"/>',
+  book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/>',
+  star: '<polygon points="12 2 15 9 22 9.5 16.5 14 18 21.5 12 17.5 6 21.5 7.5 14 2 9.5 9 9"/>'
+};
+function pickLedgerIcon(label) {
+  const l = (label || '').toLowerCase();
+  if (l.includes('audit')) return LEDGER_ICONS.clipboard;
+  if (l.includes('année') || l.includes('exercice')) return LEDGER_ICONS.calendar;
+  if (l.includes('secteur')) return LEDGER_ICONS.building;
+  if (l.includes('référentiel') || l.includes('syscohada') || l.includes('sycebnl')) return LEDGER_ICONS.book;
+  return LEDGER_ICONS.star;
+}
 function renderLedgerRows(container, rows) {
   container.innerHTML = '';
   rows.forEach(r => {
     const row = el('div', 'ledger-row');
-    row.innerHTML = `<span>${r.label}</span><span class="num">${r.value}</span>`;
+    row.innerHTML = `
+      <span class="ledger-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${pickLedgerIcon(r.label)}</svg></span>
+      <span class="ledger-row-text"><span>${r.label}</span><span class="num">${r.value}</span></span>
+    `;
     container.appendChild(row);
   });
 }
