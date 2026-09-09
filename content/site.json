@@ -1,4 +1,13 @@
 {
+  "contact": {
+    "intro": "Premier échange sans engagement pour cadrer vos besoins et vous orienter vers le bon interlocuteur du cabinet.",
+    "address": "16-162 Rue A, Dakar",
+    "phone": "+221 33 860 08 35 — +221 76 158 14 92 / 78 476 85 20",
+    "whatsappNumber": "221784768520",
+    "whatsappMessage": "Bonjour Crystal Audit Finance, je souhaite un premier échange.",
+    "email": "contact@crystalauditfinance.sn",
+    "hours": "Lundi – Vendredi, 8h30 – 17h30"
+  },
   "brand": {
     "name": "Crystal Audit Finance",
     "accentWord": "Finance"
@@ -6,16 +15,155 @@
   "ticker": {
     "text": "FORMATION AU SYSTÈME SYCEBNL POUR LES ONG INTERNATIONAUX"
   },
+  "about": {
+    "title": "Un cabinet ancré dans la pratique OHADA",
+    "intro": "Fondé à Dakar, Crystal Audit Finance réunit experts-comptables, auditeurs et fiscalistes formés aux exigences du droit comptable OHADA — SYSCOHADA pour les entreprises, SYCEBNL pour les associations et ONG — et aux réalités des organisations sénégalaises.",
+    "figureBigA": "CAF",
+    "figureCapA": "Membre affilié — Ordre des Experts-Comptables et Comptables Agréés du Sénégal",
+    "figureBigB": "01",
+    "figureCapB": "Cabinet, deux implantations : siège à Dakar, antenne sur la Petite Côte",
+    "paragraphs": [
+      "Notre rôle n'est pas de produire des documents, mais des décisions. Chaque bilan, chaque rapport d'audit ou chaque note fiscale que nous livrons est pensé pour éclairer un choix concret : investir, embaucher, refinancer, se mettre en conformité.",
+      "Nous travaillons avec des PME familiales, des filiales de groupes internationaux, des associations et des collectivités. Cette diversité nourrit une exigence commune : la rigueur du chiffre, la clarté du langage."
+    ],
+    "pillars": [
+      {
+        "title": "Indépendance",
+        "desc": "Aucune mission de conseil sur un dossier que nous certifions."
+      },
+      {
+        "title": "Confidentialité",
+        "desc": "Secret professionnel appliqué à chaque échange, écrit ou oral."
+      },
+      {
+        "title": "Proximité",
+        "desc": "Un interlocuteur unique du premier rendez-vous à la clôture."
+      },
+      {
+        "title": "Actualisation",
+        "desc": "Veille continue sur le droit fiscal et comptable sénégalais."
+      }
+    ]
+  },
+  "quiSommesNous": {
+    "photo": "",
+    "title": "Qui sommes-nous ?",
+    "intro": "Crystal Audit Finance est un cabinet d'expertise comptable, d'audit légal et contractuel — commissaire aux comptes — et de conseil aux entreprises.",
+    "subheading": "Pourquoi passer par le cabinet Crystal Audit Finance ?",
+    "paragraph2": "Passer par le cabinet Crystal Audit Finance vous fait bénéficier du savoir et des compétences d'une équipe spécialisée en audit et financement.",
+    "paragraph3": "Notre équipe de professionnels expérimentés fournit des solutions et des conseils financiers judicieux parce que la satisfaction du client est notre priorité absolue.",
+    "stats": [
+      {
+        "value": "25+",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "99%",
+        "label": "Succès des travaux"
+      },
+      {
+        "value": "3+",
+        "label": "Membres de l'équipe d'experts"
+      }
+    ]
+  },
   "colors": {
-    "charcoal": "#262B27",
-    "ink": "#1B1E1B",
-    "inkSoft": "#4C554D",
-    "paper": "#F6F5F1",
-    "paper2": "#ECF2ED",
-    "line": "#D3DBD4",
     "green": "#1F5C8C",
+    "paper2": "#ECF2ED",
+    "ink": "#1B1E1B",
+    "paper": "#F6F5F1",
+    "charcoal": "#262B27",
     "greenDeep": "#123A57",
-    "greenLight": "#E4ECF3"
+    "inkSoft": "#4C554D",
+    "greenLight": "#E4ECF3",
+    "line": "#D3DBD4"
+  },
+  "formation": {
+    "title": "Des équipes comptables autonomes",
+    "paragraphs": [
+      "Nous formons vos collaborateurs directement sur vos dossiers réels : plan comptable SYSCOHADA ou SYCEBNL selon votre statut, clôture, immobilisations, TVA — plutôt que sur des cas théoriques.",
+      "Chaque session se conclut par un support de référence que l'équipe garde en interne, pensé comme un guide de poste et non comme un simple diaporama."
+    ],
+    "checklist": [
+      "Comptabilité générale — plan SYSCOHADA (entreprises)",
+      "Comptabilité des associations & ONG — plan SYCEBNL",
+      "Fiscalité pratique pour comptables et gestionnaires",
+      "Lecture des états financiers pour dirigeants non-financiers"
+    ],
+    "statTitle": "Formats proposés",
+    "stats": [
+      {
+        "label": "Intra-entreprise (sur site)",
+        "value": "1 à 3 jours"
+      },
+      {
+        "label": "Ateliers de clôture annuelle",
+        "value": "Demi-journée"
+      },
+      {
+        "label": "Accompagnement continu",
+        "value": "Forfait mensuel"
+      }
+    ],
+    "photos": [
+      {
+        "url": "/uploads/formation-1.jpg",
+        "caption": "Session Extra entreprise — SYCEBNL"
+      },
+      {
+        "url": "/uploads/formation-2.jpg",
+        "caption": "Ibrahima BA DG CAFIN - SYSCOHADA / SYCEBNL"
+      },
+      {
+        "url": "/uploads/formation-3.jpg",
+        "caption": "Formation extra Entreprise SYCEBNL"
+      }
+    ]
+  },
+  "finance": {
+    "title": "Construire le dossier qui convainc un financeur",
+    "paragraphs": [
+      "Un bon projet mal chiffré reste souvent sans financement. Nous traduisons votre activité en business plan, prévisionnel et plan de trésorerie lisibles par une banque ou un investisseur.",
+      "Nous accompagnons ensuite la négociation : structuration de la dette, garanties, calendrier de remboursement."
+    ],
+    "checklist": [
+      "Business plan et comptes de résultat prévisionnels",
+      "Montage de dossiers de crédit bancaire ou de subvention",
+      "Tableaux de bord et pilotage de trésorerie"
+    ],
+    "statTitle": "Partenaires de financement usuels",
+    "stats": [
+      {
+        "label": "Banques commerciales locales",
+        "value": "Dossier crédit"
+      },
+      {
+        "label": "Fonds de garantie & institutions",
+        "value": "Co-financement"
+      },
+      {
+        "label": "Bailleurs & ONG",
+        "value": "Subvention"
+      }
+    ],
+    "subheading": "Conseil en recherche de financement",
+    "subheadingText": "Notre équipe de consultants expérimentés vous accompagne dans la recherche des financements correspondant à votre projet d'investissement.",
+    "missionCard": {
+      "title": "Levée de dettes et financement structuré",
+      "desc": "Grâce à son réseau de partenaires, Crystal Audit Finance vous fait bénéficier de contacts de premier choix : Bailleurs de fonds internationaux, banques, Agences de crédit Export et fonds d'investissement. Nos experts vous offrent une accessibilité rapide à la solution de financement adaptée.",
+      "stepsTitle": "Notre mission se déroule comme suit :",
+      "steps": [
+        "Identification de vos besoins",
+        "Participation à l'élaboration de votre business plan",
+        "Identification et approche d'organismes financiers potentiels",
+        "Élaboration d'une note d'information destinée aux bailleurs potentiels",
+        "Suivi de l'étude du dossier, et conseil lors d'éventuelles Due Diligences",
+        "Organisation des contacts, réunions et visites",
+        "Négociation à l'obtention d'un taux préférentiel",
+        "Finalisation et mise en place du financement",
+        "Suivi post financement"
+      ]
+    }
   },
   "hero": {
     "heroImage": "/uploads/hero-goree.jpg",
@@ -48,105 +196,10 @@
       }
     ]
   },
-  "quiSommesNous": {
-    "photo": "",
-    "title": "Qui sommes-nous ?",
-    "intro": "Crystal Audit Finance est un cabinet d'expertise comptable, d'audit légal et contractuel — commissaire aux comptes — et de conseil aux entreprises.",
-    "subheading": "Pourquoi passer par le cabinet Crystal Audit Finance ?",
-    "paragraph2": "Passer par le cabinet Crystal Audit Finance vous fait bénéficier du savoir et des compétences d'une équipe spécialisée en audit et financement.",
-    "paragraph3": "Notre équipe de professionnels expérimentés fournit des solutions et des conseils financiers judicieux parce que la satisfaction du client est notre priorité absolue.",
-    "stats": [
-      {
-        "value": "25+",
-        "label": "Clients satisfaits"
-      },
-      {
-        "value": "99%",
-        "label": "Succès des travaux"
-      },
-      {
-        "value": "3+",
-        "label": "Membres de l'équipe d'experts"
-      }
-    ]
-  },
-  "about": {
-    "title": "Un cabinet ancré dans la pratique OHADA",
-    "intro": "Fondé à Dakar, Crystal Audit Finance réunit experts-comptables, auditeurs et fiscalistes formés aux exigences du droit comptable OHADA — SYSCOHADA pour les entreprises, SYCEBNL pour les associations et ONG — et aux réalités des organisations sénégalaises.",
-    "figureBigA": "CAF",
-    "figureCapA": "Membre affilié — Ordre des Experts-Comptables et Comptables Agréés du Sénégal",
-    "figureBigB": "01",
-    "figureCapB": "Cabinet, deux implantations : siège à Dakar, antenne sur la Petite Côte",
-    "paragraphs": [
-      "Notre rôle n'est pas de produire des documents, mais des décisions. Chaque bilan, chaque rapport d'audit ou chaque note fiscale que nous livrons est pensé pour éclairer un choix concret : investir, embaucher, refinancer, se mettre en conformité.",
-      "Nous travaillons avec des PME familiales, des filiales de groupes internationaux, des associations et des collectivités. Cette diversité nourrit une exigence commune : la rigueur du chiffre, la clarté du langage."
-    ],
-    "pillars": [
-      {
-        "title": "Indépendance",
-        "desc": "Aucune mission de conseil sur un dossier que nous certifions."
-      },
-      {
-        "title": "Confidentialité",
-        "desc": "Secret professionnel appliqué à chaque échange, écrit ou oral."
-      },
-      {
-        "title": "Proximité",
-        "desc": "Un interlocuteur unique du premier rendez-vous à la clôture."
-      },
-      {
-        "title": "Actualisation",
-        "desc": "Veille continue sur le droit fiscal et comptable sénégalais."
-      }
-    ]
-  },
-  "services": {
-    "title": "Quatre pôles d'intervention",
-    "intro": "De la certification des comptes à la montée en compétence de vos équipes, chaque pôle peut être mobilisé seul ou en mission combinée.",
-    "items": [
-      {
-        "code": "Audit",
-        "title": "Audit légal & contractuel",
-        "desc": "Commissariat aux comptes, audit d'acquisition, revue de contrôle interne et missions ponctuelles à la demande des associés ou des bailleurs.",
-        "points": [
-          "Expertise comptable",
-          "Commissariat aux Comptes",
-          "Audit légal et contractuel",
-          "Conseil en gestion et organisation",
-          "Redressement et liquidation judiciaire",
-          "Conseil juridique et fiscal",
-          "Due diligence",
-          "Assistance passation de marchés",
-          "Formation"
-        ]
-      },
-      {
-        "code": "Conseils",
-        "title": "Conseil fiscal & juridique",
-        "desc": "Optimisation et sécurisation fiscale, accompagnement à la création d'entreprise, assistance lors des contrôles de la DGID."
-      },
-      {
-        "code": "Formation",
-        "title": "Formation & renforcement de capacités",
-        "desc": "Sessions intra-entreprise sur le SYSCOHADA, le SYCEBNL, la fiscalité pratique et les outils de gestion."
-      },
-      {
-        "code": "Finance",
-        "title": "Ingénierie & structuration financière",
-        "desc": "Montage de dossiers de financement, business plans, tableaux de bord et accompagnement auprès des banques et investisseurs.",
-        "points": [
-          "Dette senior",
-          "Mezzanine",
-          "Capital risque – Equity",
-          "Crédit export",
-          "Crédit-bail",
-          "Subvention",
-          "Partenariat Public Privé",
-          "Garantie",
-          "Promotion des investissements"
-        ]
-      }
-    ]
+  "footer": {
+    "desc": "Cabinet d'audit, d'expertise comptable et de conseil basé à Dakar, au service des entreprises et institutions sénégalaises.",
+    "orderLine": "Membre de l'Ordre des Experts-Comptables et Comptables Agréés du Sénégal",
+    "year": "2026"
   },
   "audit": {
     "title": "Une opinion indépendante sur vos comptes",
@@ -302,99 +355,12 @@
       }
     ]
   },
-  "formation": {
-    "title": "Des équipes comptables autonomes",
-    "paragraphs": [
-      "Nous formons vos collaborateurs directement sur vos dossiers réels : plan comptable SYSCOHADA ou SYCEBNL selon votre statut, clôture, immobilisations, TVA — plutôt que sur des cas théoriques.",
-      "Chaque session se conclut par un support de référence que l'équipe garde en interne, pensé comme un guide de poste et non comme un simple diaporama."
-    ],
-    "checklist": [
-      "Comptabilité générale — plan SYSCOHADA (entreprises)",
-      "Comptabilité des associations & ONG — plan SYCEBNL",
-      "Fiscalité pratique pour comptables et gestionnaires",
-      "Lecture des états financiers pour dirigeants non-financiers"
-    ],
-    "statTitle": "Formats proposés",
-    "stats": [
-      {
-        "label": "Intra-entreprise (sur site)",
-        "value": "1 à 3 jours"
-      },
-      {
-        "label": "Ateliers de clôture annuelle",
-        "value": "Demi-journée"
-      },
-      {
-        "label": "Accompagnement continu",
-        "value": "Forfait mensuel"
-      }
-    ],
-    "photos": [
-      {
-        "url": "/uploads/formation-1.jpg",
-        "caption": "Session Extra entreprise — SYCEBNL"
-      },
-      {
-        "url": "/uploads/formation-2.jpg",
-        "caption": "Ibrahima BA DG CAFIN - SYSCOHADA / SYCEBNL"
-      },
-      {
-        "url": "/uploads/formation-3.jpg",
-        "caption": "Formation extra Entreprise SYCEBNL"
-      }
-    ]
-  },
-  "finance": {
-    "title": "Construire le dossier qui convainc un financeur",
-    "paragraphs": [
-      "Un bon projet mal chiffré reste souvent sans financement. Nous traduisons votre activité en business plan, prévisionnel et plan de trésorerie lisibles par une banque ou un investisseur.",
-      "Nous accompagnons ensuite la négociation : structuration de la dette, garanties, calendrier de remboursement."
-    ],
-    "checklist": [
-      "Business plan et comptes de résultat prévisionnels",
-      "Montage de dossiers de crédit bancaire ou de subvention",
-      "Tableaux de bord et pilotage de trésorerie"
-    ],
-    "statTitle": "Partenaires de financement usuels",
-    "stats": [
-      {
-        "label": "Banques commerciales locales",
-        "value": "Dossier crédit"
-      },
-      {
-        "label": "Fonds de garantie & institutions",
-        "value": "Co-financement"
-      },
-      {
-        "label": "Bailleurs & ONG",
-        "value": "Subvention"
-      }
-    ],
-    "subheading": "Conseil en recherche de financement",
-    "subheadingText": "Notre équipe de consultants expérimentés vous accompagne dans la recherche des financements correspondant à votre projet d'investissement.",
-    "missionCard": {
-      "title": "Levée de dettes et financement structuré",
-      "desc": "Grâce à son réseau de partenaires, Crystal Audit Finance vous fait bénéficier de contacts de premier choix : Bailleurs de fonds internationaux, banques, Agences de crédit Export et fonds d'investissement. Nos experts vous offrent une accessibilité rapide à la solution de financement adaptée.",
-      "stepsTitle": "Notre mission se déroule comme suit :",
-      "steps": [
-        "Identification de vos besoins",
-        "Participation à l'élaboration de votre business plan",
-        "Identification et approche d'organismes financiers potentiels",
-        "Élaboration d'une note d'information destinée aux bailleurs potentiels",
-        "Suivi de l'étude du dossier, et conseil lors d'éventuelles Due Diligences",
-        "Organisation des contacts, réunions et visites",
-        "Négociation à l'obtention d'un taux préférentiel",
-        "Finalisation et mise en place du financement",
-        "Suivi post financement"
-      ]
-    }
-  },
   "team": {
     "title": "L'équipe qui suit votre dossier",
     "intro": "Notre équipe d'experts vous aidera.",
     "members": [
       {
-        "photo": "",
+        "photo": "/uploads/ibou-ba-dg.png",
         "initials": "IB",
         "name": "Ibrahima BA",
         "role": "Expert-Comptable, Commissaire aux Comptes",
@@ -402,18 +368,52 @@
       }
     ]
   },
-  "contact": {
-    "intro": "Premier échange sans engagement pour cadrer vos besoins et vous orienter vers le bon interlocuteur du cabinet.",
-    "address": "16-162 Rue A, Dakar",
-    "phone": "+221 33 860 08 35 — +221 76 158 14 92 / 78 476 85 20",
-    "whatsappNumber": "221784768520",
-    "whatsappMessage": "Bonjour Crystal Audit Finance, je souhaite un premier échange.",
-    "email": "contact@crystalauditfinance.sn",
-    "hours": "Lundi – Vendredi, 8h30 – 17h30"
-  },
-  "footer": {
-    "desc": "Cabinet d'audit, d'expertise comptable et de conseil basé à Dakar, au service des entreprises et institutions sénégalaises.",
-    "orderLine": "Membre de l'Ordre des Experts-Comptables et Comptables Agréés du Sénégal",
-    "year": "2026"
+  "services": {
+    "title": "Quatre pôles d'intervention",
+    "intro": "De la certification des comptes à la montée en compétence de vos équipes, chaque pôle peut être mobilisé seul ou en mission combinée.",
+    "items": [
+      {
+        "code": "Audit",
+        "title": "Audit légal & contractuel",
+        "desc": "Commissariat aux comptes, audit d'acquisition, revue de contrôle interne et missions ponctuelles à la demande des associés ou des bailleurs.",
+        "points": [
+          "Expertise comptable",
+          "Commissariat aux Comptes",
+          "Audit légal et contractuel",
+          "Conseil en gestion et organisation",
+          "Redressement et liquidation judiciaire",
+          "Conseil juridique et fiscal",
+          "Due diligence",
+          "Assistance passation de marchés",
+          "Formation"
+        ]
+      },
+      {
+        "code": "Conseils",
+        "title": "Conseil fiscal & juridique",
+        "desc": "Optimisation et sécurisation fiscale, accompagnement à la création d'entreprise, assistance lors des contrôles de la DGID."
+      },
+      {
+        "code": "Formation",
+        "title": "Formation & renforcement de capacités",
+        "desc": "Sessions intra-entreprise sur le SYSCOHADA, le SYCEBNL, la fiscalité pratique et les outils de gestion."
+      },
+      {
+        "code": "Finance",
+        "title": "Ingénierie & structuration financière",
+        "desc": "Montage de dossiers de financement, business plans, tableaux de bord et accompagnement auprès des banques et investisseurs.",
+        "points": [
+          "Dette senior",
+          "Mezzanine",
+          "Capital risque – Equity",
+          "Crédit export",
+          "Crédit-bail",
+          "Subvention",
+          "Partenariat Public Privé",
+          "Garantie",
+          "Promotion des investissements"
+        ]
+      }
+    ]
   }
 }
