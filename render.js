@@ -67,6 +67,34 @@ function goreeIllustrationDataUrl() {
 }
 
 
+function contactSilhouettesDataUrl() {
+  // Illustration par défaut : silhouettes de personnes en dégradé bleu,
+  // utilisée tant qu'aucune vraie photo n'a été chargée depuis l'admin.
+  const svg = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" preserveAspectRatio="xMidYMax slice">
+    <defs>
+      <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#123A57"/>
+        <stop offset="1" stop-color="#0A1620"/>
+      </linearGradient>
+    </defs>
+    <rect width="1400" height="560" fill="url(#cbg)"/>
+    <g fill="#FFFFFF" opacity="0.10">
+      <ellipse cx="220" cy="430" rx="90" ry="130"/>
+      <circle cx="220" cy="255" r="58"/>
+      <ellipse cx="430" cy="460" rx="105" ry="150"/>
+      <circle cx="430" cy="265" r="66"/>
+      <ellipse cx="670" cy="440" rx="95" ry="140"/>
+      <circle cx="670" cy="258" r="60"/>
+      <ellipse cx="920" cy="470" rx="110" ry="155"/>
+      <circle cx="920" cy="262" r="68"/>
+      <ellipse cx="1160" cy="445" rx="98" ry="142"/>
+      <circle cx="1160" cy="256" r="62"/>
+    </g>
+  </svg>`;
+  return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+}
+
 function el(tag, className, html) {
   const e = document.createElement(tag);
   if (className) e.className = className;
@@ -325,6 +353,9 @@ async function renderSite() {
   });
 
   // Contact
+  const contactSection = document.getElementById('contacts');
+  const contactBg = d.contact.backgroundImage && d.contact.backgroundImage.trim() ? d.contact.backgroundImage : contactSilhouettesDataUrl();
+  contactSection.style.backgroundImage = `url("${contactBg}")`;
   if (d.contact.sectionLabel) document.getElementById('contactSectionLabel').textContent = d.contact.sectionLabel;
   if (d.contact.title) document.getElementById('contactTitle').textContent = d.contact.title;
   document.getElementById('contactIntro').textContent = d.contact.intro;

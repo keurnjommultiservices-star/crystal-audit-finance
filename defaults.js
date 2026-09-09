@@ -451,6 +451,7 @@ const CAF_DEFAULT_DATA = {
     ]
   },
   "contact": {
+    "backgroundImage": "",
     "sectionLabel": "Prendre contact",
     "title": "Contactez-nous pour toute demande d'aide ou d'information.",
     "intro": "Nous sommes heureux de discuter de la situation de votre organisation. N'hésitez pas à nous contacter en utilisant les coordonnées ci-dessous ou en saisissant votre demande.",
