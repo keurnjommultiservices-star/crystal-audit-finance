@@ -432,7 +432,9 @@ const CAF_DEFAULT_DATA = {
         "Négociation à l'obtention d'un taux préférentiel",
         "Finalisation et mise en place du financement",
         "Suivi post financement"
-      ]
+      ],
+      "partnersImage": "/uploads/finance-partners.png",
+      "partnersCaption": "Nos partenaires bancaires et institutionnels"
     }
   },
   "team": {

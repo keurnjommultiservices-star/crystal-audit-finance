@@ -293,13 +293,21 @@ async function renderSite() {
   if (d.finance.missionCard) {
     const mc = d.finance.missionCard;
     const stepsHtml = (mc.steps || []).map(s => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>${s}</li>`).join('');
+    const partnersHtml = mc.partnersImage && mc.partnersImage.trim()
+      ? `<div class="fm-partners"><img src="${mc.partnersImage}" alt="${mc.partnersCaption || 'Nos partenaires'}">${mc.partnersCaption ? `<div class="fm-partners-caption">${mc.partnersCaption}</div>` : ''}</div>`
+      : '';
     financeMission.innerHTML = `
       ${d.finance.subheading ? `<div class="fm-subheading">${d.finance.subheading}</div>` : ''}
       ${d.finance.subheadingText ? `<p class="fm-subtext">${d.finance.subheadingText}</p>` : ''}
-      <div class="fm-card-title">${mc.title}</div>
-      <p class="fm-card-desc">${mc.desc}</p>
-      ${mc.stepsTitle ? `<div class="fm-steps-title">${mc.stepsTitle}</div>` : ''}
-      <ul class="fm-steps">${stepsHtml}</ul>
+      <div class="fm-card-grid">
+        <div>
+          <div class="fm-card-title">${mc.title}</div>
+          <p class="fm-card-desc">${mc.desc}</p>
+          ${mc.stepsTitle ? `<div class="fm-steps-title">${mc.stepsTitle}</div>` : ''}
+          <ul class="fm-steps">${stepsHtml}</ul>
+        </div>
+        ${partnersHtml}
+      </div>
     `;
   } else {
     financeMission.style.display = 'none';

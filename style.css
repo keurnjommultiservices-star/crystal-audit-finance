@@ -325,6 +325,7 @@ section#finance .detail{grid-template-columns:1.1fr 0.9fr;}
   font-family:var(--serif); font-weight:700; font-size:22px; color:var(--charcoal); margin-bottom:12px;
 }
 .finance-mission .fm-subtext{font-size:15.5px; font-weight:500; color:var(--ink-soft); max-width:70ch; margin-bottom:28px;}
+.fm-card-grid{display:grid; grid-template-columns:1.3fr 0.9fr; gap:40px; align-items:start;}
 .finance-mission .fm-card-title{font-family:var(--serif); font-weight:700; font-size:19px; color:var(--green-deep); margin-bottom:12px;}
 .finance-mission .fm-card-desc{font-size:15px; font-weight:500; color:var(--ink-soft); max-width:70ch; margin-bottom:20px;}
 .finance-mission .fm-steps-title{font-size:14.5px; font-weight:800; color:var(--charcoal); margin-bottom:14px;}
@@ -335,6 +336,12 @@ section#finance .detail{grid-template-columns:1.1fr 0.9fr;}
   font-size:14px; font-weight:600; color:var(--charcoal); display:flex; gap:8px; align-items:flex-start;
 }
 .finance-mission .fm-steps li svg{width:14px; height:14px; color:var(--green); flex:none; margin-top:3px;}
+.fm-partners{border:2px solid var(--line); background:var(--paper-2); padding:20px;}
+.fm-partners img{width:100%; height:auto; display:block;}
+.fm-partners .fm-partners-caption{
+  font-size:12.5px; font-weight:700; color:var(--green-deep); text-align:center; margin-top:12px;
+}
+@media (max-width:760px){ .fm-card-grid{grid-template-columns:1fr;} }
 @media (max-width:600px){ .finance-mission .fm-steps{grid-template-columns:1fr;} .finance-mission{padding:30px 26px;} }
 
 /* ===== Formation — galerie photos ===== */
