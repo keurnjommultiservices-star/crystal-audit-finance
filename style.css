@@ -79,6 +79,23 @@ nav.primary a.nav-wrap{
   .nav-toggle{display:block;}
 }
 
+/* ===== Bande défilante (annonce) ===== */
+.ticker{
+  background:var(--green-deep); overflow:hidden; white-space:nowrap;
+  padding:16px 0; border-bottom:2px solid var(--green);
+}
+.ticker-track{
+  display:inline-block; animation:ticker-scroll 22s linear infinite;
+}
+.ticker-track span{
+  display:inline-block; padding:0 48px;
+  color:#fff; font-weight:800; font-size:19px; letter-spacing:0.03em;
+}
+@keyframes ticker-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
 /* ===== Hero ===== */
 .hero{
   position:relative;
@@ -158,9 +175,11 @@ section.alt{background:#fff; border-top:2px solid var(--line); border-bottom:2px
   gap:24px; margin-bottom:56px; flex-wrap:wrap;
 }
 .section-ref{
-  font-size:13.5px; letter-spacing:0.04em; color:var(--green);
-  font-weight:800; margin-bottom:10px;
+  display:inline-block;
+  font-size:13.5px; letter-spacing:0.04em; color:#fff;
+  font-weight:800; margin-bottom:14px;
   font-variant-numeric:tabular-nums;
+  background:var(--green); padding:8px 16px; border-radius:4px;
 }
 .section-head h2{
   font-family:var(--serif); font-weight:700; font-size:clamp(28px,3vw,38px);
