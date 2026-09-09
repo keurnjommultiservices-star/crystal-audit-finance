@@ -244,6 +244,7 @@ collections:
             name: "contact"
             widget: "object"
             fields:
+              - {label: "Photo de fond (optionnel — sinon silhouettes par défaut)", name: "backgroundImage", widget: "image", required: false}
               - {label: "Petit label au-dessus du titre", name: "sectionLabel", widget: "string"}
               - {label: "Titre principal", name: "title", widget: "string"}
               - {label: "Texte d'introduction", name: "intro", widget: "text"}
