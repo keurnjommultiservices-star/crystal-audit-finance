@@ -177,7 +177,7 @@ section.alt{background:#fff; border-top:2px solid var(--line); border-bottom:2px
 .section-ref{
   display:inline-block;
   font-size:13.5px; letter-spacing:0.04em; color:#fff;
-  font-weight:800; margin-bottom:14px;
+  font-weight:800; margin-bottom:8px;
   font-variant-numeric:tabular-nums;
   background:var(--green); padding:8px 16px; border-radius:4px;
 }
@@ -186,6 +186,7 @@ section.alt{background:#fff; border-top:2px solid var(--line); border-bottom:2px
   color:var(--charcoal); max-width:16ch;
 }
 .section-head p{color:var(--ink-soft); max-width:42ch; font-size:16px; font-weight:600;}
+.section-head p.section-ref{color:#fff;}
 
 /* ===== Qui sommes-nous ===== */
 .qsn-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;}
