@@ -221,6 +221,8 @@ collections:
                   - {label: "Description", name: "desc", widget: "text"}
                   - {label: "Titre de la liste d'étapes", name: "stepsTitle", widget: "string"}
                   - {label: "Étapes", name: "steps", widget: "list"}
+                  - {label: "Image des partenaires", name: "partnersImage", widget: "image", required: false}
+                  - {label: "Légende de l'image", name: "partnersCaption", widget: "string", required: false}
 
           - label: "Équipe"
             name: "team"
