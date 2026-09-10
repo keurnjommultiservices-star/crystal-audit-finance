@@ -199,6 +199,47 @@ function applyColors(c) {
   root.setProperty('--green-light', c.greenLight);
 }
 
+function initFormationCarousel(photos) {
+  const track = document.getElementById('fcTrack');
+  const dotsWrap = document.getElementById('fcDots');
+  const prevBtn = document.getElementById('fcPrev');
+  const nextBtn = document.getElementById('fcNext');
+  const carousel = document.getElementById('formationCarousel');
+
+  if (!photos.length) {
+    carousel.style.display = 'none';
+    dotsWrap.style.display = 'none';
+    return;
+  }
+
+  track.innerHTML = '';
+  dotsWrap.innerHTML = '';
+  photos.forEach((p, i) => {
+    const url = p.url && p.url.trim() ? p.url : cafPlaceholder('Photo à ajouter', ['a', 'b', 'c'][i % 3]);
+    const slide = el('div', 'fc-slide', `<div class="formation-photo"><img src="${url}" alt="${p.caption || ''}"><div class="cap">${p.caption || ''}</div></div>`);
+    track.appendChild(slide);
+    const dot = el('button', 'fc-dot' + (i === 0 ? ' active' : ''));
+    dot.type = 'button';
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  const showArrows = photos.length > 1;
+  prevBtn.style.display = showArrows ? 'flex' : 'none';
+  nextBtn.style.display = showArrows ? 'flex' : 'none';
+  dotsWrap.style.display = showArrows ? 'flex' : 'none';
+
+  let current = 0;
+  function goTo(i) {
+    current = (i + photos.length) % photos.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsWrap.querySelectorAll('.fc-dot').forEach((d, idx) => d.classList.toggle('active', idx === current));
+  }
+  prevBtn.onclick = () => goTo(current - 1);
+  nextBtn.onclick = () => goTo(current + 1);
+  goTo(0);
+}
+
 async function renderSite() {
   const d = await cafFetchData();
 
@@ -303,13 +344,7 @@ async function renderSite() {
   renderChecklist(document.getElementById('formationChecklist'), d.formation.checklist);
   document.getElementById('formationStatTitle').textContent = d.formation.statTitle;
   renderStatRows(document.getElementById('formationStats'), d.formation.stats);
-  const gallery = document.getElementById('formationGallery');
-  gallery.innerHTML = '';
-  d.formation.photos.forEach((p, i) => {
-    const url = p.url && p.url.trim() ? p.url : cafPlaceholder('Photo à ajouter', ['a','b','c'][i % 3]);
-    const card = el('div', 'formation-photo', `<img src="${url}" alt="${p.caption}"><div class="cap">${p.caption}</div>`);
-    gallery.appendChild(card);
-  });
+  initFormationCarousel(d.formation.photos || []);
 
   // Finance
   document.getElementById('financeTitle').textContent = d.finance.title;

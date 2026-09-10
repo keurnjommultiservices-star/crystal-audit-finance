@@ -183,7 +183,18 @@
           <div id="formationStats"></div>
         </div>
       </div>
-      <div class="formation-gallery" id="formationGallery"></div>
+      <div class="formation-carousel" id="formationCarousel">
+        <button type="button" class="fc-arrow fc-prev" id="fcPrev" aria-label="Photo précédente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="fc-viewport">
+          <div class="fc-track" id="fcTrack"></div>
+        </div>
+        <button type="button" class="fc-arrow fc-next" id="fcNext" aria-label="Photo suivante">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="fc-dots" id="fcDots"></div>
     </div>
   </section>
 
